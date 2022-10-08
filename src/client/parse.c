@@ -1062,6 +1062,13 @@ static void CL_ParsePrint(void)
         S_StartLocalSoundOnce("misc/talk1.wav");
     else if (cl_chat_sound->integer > 0)
         S_StartLocalSoundOnce("misc/talk.wav");
+
+    #if USE_AQTION
+        if (cl_mk23_sound->integer > 1)
+        S_StartLocalSoundOnce("weapons/mk23fire1.wav");
+        else if (cl_mk23_sound->integer > 0)
+        S_StartLocalSoundOnce("weapons/mk23fire0.wav");
+    #endif
 }
 
 static void CL_ParseCenterPrint(void)

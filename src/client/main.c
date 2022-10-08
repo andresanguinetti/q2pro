@@ -105,6 +105,19 @@ centity_t   cl_entities[MAX_EDICTS];
 cmdbuf_t    cl_cmdbuf;
 char        cl_cmdbuf_text[MAX_STRING_CHARS];
 
+
+#if USE_AQTION
+cvar_t    *cl_mk23_sound;
+cvar_t    *cl_mp5_sound;
+cvar_t    *cl_m4_sound;
+cvar_t    *cl_m3_sound;
+cvar_t    *cl_hc_sound;
+cvar_t    *cl_ssg_sound;
+cvar_t    *cl_sknife_sound;
+cvar_t    *cl_tknife_sound;
+cvar_t    *cl_grenade_sound;
+#endif
+
 //======================================================================
 
 typedef enum {
@@ -3802,6 +3815,21 @@ static void cl_chat_sound_changed(cvar_t *self)
         self->integer = 1;
 }
 
+#if USE_AQTION
+
+static void cl_mk23_sound_changed(cvar_t *self)
+{
+    if (!Q_stricmp(self->string, "weapons/mk23fire0.wav"))
+        self->integer = 0;
+    else if (!Q_stricmp(self->string, "weapons/mk23fire1.wav"))
+        self->integer = 1;
+    else if (!self->integer && !COM_IsUint(self->string))
+        self->integer = 0;
+}
+
+
+#endif
+
 void cl_timeout_changed(cvar_t *self)
 {
     self->integer = 1000 * Cvar_ClampValue(self, 0, 24 * 24 * 60 * 60);
@@ -4007,6 +4035,14 @@ static void CL_InitLocal(void)
     #endif
     info_version = Cvar_Get("version", "", CVAR_USERINFO);
 
+    #if USE_AQTION
+
+        cl_mk23_sound = Cvar_Get("cl_mk23_sound", "0", 0);
+        cl_mk23_sound->changed = cl_mk23_sound_changed;
+        cl_mk23_sound_changed(cl_mk23_sound);
+
+
+    #endif
 
     //
     // macros
