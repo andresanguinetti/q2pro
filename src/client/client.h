@@ -552,6 +552,7 @@ extern cvar_t    *info_gender;
 extern cvar_t    *info_uf;
 
 #if USE_AQTION
+extern cvar_t    *cl_actionsounds;
 extern cvar_t    *cl_mk23_sound;
 extern cvar_t    *cl_mp5_sound;
 extern cvar_t    *cl_m4_sound;

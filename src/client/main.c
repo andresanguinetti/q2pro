@@ -107,15 +107,16 @@ char        cl_cmdbuf_text[MAX_STRING_CHARS];
 
 
 #if USE_AQTION
-cvar_t    *cl_mk23_sound;
-cvar_t    *cl_mp5_sound;
-cvar_t    *cl_m4_sound;
-cvar_t    *cl_m3_sound;
-cvar_t    *cl_hc_sound;
-cvar_t    *cl_ssg_sound;
-cvar_t    *cl_sknife_sound;
-cvar_t    *cl_tknife_sound;
-cvar_t    *cl_grenade_sound;
+cvar_t  *cl_actionsounds;
+cvar_t  *cl_mk23_sound;
+cvar_t  *cl_mp5_sound;
+cvar_t  *cl_m4_sound;
+cvar_t  *cl_m3_sound;
+cvar_t  *cl_hc_sound;
+cvar_t  *cl_ssg_sound;
+cvar_t  *cl_sknife_sound;
+cvar_t  *cl_tknife_sound;
+cvar_t  *cl_grenade_sound;
 #endif
 
 //======================================================================
@@ -3823,10 +3824,95 @@ static void cl_mk23_sound_changed(cvar_t *self)
         self->integer = 0;
     else if (!Q_stricmp(self->string, "weapons/mk23fire1.wav"))
         self->integer = 1;
+    else if (!Q_stricmp(self->string, "weapons/mk23fire2.wav"))
+        self->integer = 2;
     else if (!self->integer && !COM_IsUint(self->string))
         self->integer = 0;
 }
 
+static void cl_mp5_sound_changed(cvar_t *self)
+{
+    if (!Q_stricmp(self->string, "weapons/mp5fire0.wav"))
+        self->integer = 0;
+    else if (!Q_stricmp(self->string, "weapons/mp5fire1.wav"))
+        self->integer = 1;
+    else if (!Q_stricmp(self->string, "weapons/mp5fire2.wav"))
+        self->integer = 2;
+    else if (!self->integer && !COM_IsUint(self->string))
+        self->integer = 0;
+}
+
+static void cl_m4a1_sound_changed(cvar_t *self)
+{
+    if (!Q_stricmp(self->string, "weapons/m4a1fire0.wav"))
+        self->integer = 0;
+    else if (!Q_stricmp(self->string, "weapons/m4a1fire1.wav"))
+        self->integer = 1;
+    else if (!Q_stricmp(self->string, "weapons/m4a1fire2.wav"))
+        self->integer = 2;
+    else if (!self->integer && !COM_IsUint(self->string))
+        self->integer = 0;
+}
+
+static void cl_m3_sound_changed(cvar_t *self)
+{
+    if (!Q_stricmp(self->string, "weapons/m3fire0.wav"))
+        self->integer = 0;
+    else if (!Q_stricmp(self->string, "weapons/m3fire1.wav"))
+        self->integer = 1;
+    else if (!Q_stricmp(self->string, "weapons/m3fire2.wav"))
+        self->integer = 2;
+    else if (!self->integer && !COM_IsUint(self->string))
+        self->integer = 0;
+}
+
+static void cl_hc_sound_changed(cvar_t *self)
+{
+    if (!Q_stricmp(self->string, "weapons/hcfire0.wav"))
+        self->integer = 0;
+    else if (!Q_stricmp(self->string, "weapons/hcfire1.wav"))
+        self->integer = 1;
+    else if (!Q_stricmp(self->string, "weapons/hcfire2.wav"))
+        self->integer = 2;
+    else if (!self->integer && !COM_IsUint(self->string))
+        self->integer = 0;
+}
+
+static void cl_ssg_sound_changed(cvar_t *self)
+{
+    if (!Q_stricmp(self->string, "weapons/ssgfire0.wav"))
+        self->integer = 0;
+    else if (!Q_stricmp(self->string, "weapons/ssgfire1.wav"))
+        self->integer = 1;
+    else if (!Q_stricmp(self->string, "weapons/ssgfire2.wav"))
+        self->integer = 2;
+    else if (!self->integer && !COM_IsUint(self->string))
+        self->integer = 0;
+}
+
+static void cl_sknife_sound_changed(cvar_t *self)
+{
+    if (!Q_stricmp(self->string, "weapons/sknife0.wav"))
+        self->integer = 0;
+    else if (!Q_stricmp(self->string, "weapons/sknife1.wav"))
+        self->integer = 1;
+    else if (!Q_stricmp(self->string, "weapons/sknife2.wav"))
+        self->integer = 2;
+    else if (!self->integer && !COM_IsUint(self->string))
+        self->integer = 0;
+}
+
+static void cl_tknife_sound_changed(cvar_t *self)
+{
+    if (!Q_stricmp(self->string, "weapons/tknife0.wav"))
+        self->integer = 0;
+    else if (!Q_stricmp(self->string, "weapons/tknife1.wav"))
+        self->integer = 1;
+    else if (!Q_stricmp(self->string, "weapons/tknife2.wav"))
+        self->integer = 2;
+    else if (!self->integer && !COM_IsUint(self->string))
+        self->integer = 0;
+}
 
 #endif
 
