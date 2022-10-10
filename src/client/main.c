@@ -3886,30 +3886,6 @@ static void cl_ssg_sound_changed(cvar_t *self)
         self->integer = 0;
 }
 
-static void cl_sknife_sound_changed(cvar_t *self)
-{
-    if (!Q_stricmp(self->string, "weapons/sknife0.wav"))
-        self->integer = 0;
-    else if (!Q_stricmp(self->string, "weapons/sknife1.wav"))
-        self->integer = 1;
-    else if (!Q_stricmp(self->string, "weapons/sknife2.wav"))
-        self->integer = 2;
-    else if (!self->integer && !COM_IsUint(self->string))
-        self->integer = 0;
-}
-
-static void cl_tknife_sound_changed(cvar_t *self)
-{
-    if (!Q_stricmp(self->string, "weapons/tknife0.wav"))
-        self->integer = 0;
-    else if (!Q_stricmp(self->string, "weapons/tknife1.wav"))
-        self->integer = 1;
-    else if (!Q_stricmp(self->string, "weapons/tknife2.wav"))
-        self->integer = 2;
-    else if (!self->integer && !COM_IsUint(self->string))
-        self->integer = 0;
-}
-
 #endif
 
 void cl_timeout_changed(cvar_t *self)
