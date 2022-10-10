@@ -551,19 +551,6 @@ extern cvar_t    *info_hand;
 extern cvar_t    *info_gender;
 extern cvar_t    *info_uf;
 
-#if USE_AQTION
-extern cvar_t    *cl_actionsounds;
-extern cvar_t    *cl_mk23_sound;
-extern cvar_t    *cl_mp5_sound;
-extern cvar_t    *cl_m4_sound;
-extern cvar_t    *cl_m3_sound;
-extern cvar_t    *cl_hc_sound;
-extern cvar_t    *cl_ssg_sound;
-extern cvar_t    *cl_sknife_sound;
-extern cvar_t    *cl_tknife_sound;
-extern cvar_t    *cl_grenade_sound;
-#endif
-
 //=============================================================================
 
 //

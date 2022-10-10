@@ -1062,67 +1062,6 @@ static void CL_ParsePrint(void)
         S_StartLocalSoundOnce("misc/talk1.wav");
     else if (cl_chat_sound->integer > 0)
         S_StartLocalSoundOnce("misc/talk.wav");
-
-    #if USE_AQTION
-        if (cl_actionsounds->value) {
-            if (cl_mk23_sound->integer == 1)
-                S_StartLocalSoundOnce("weapons/mk23fire1.wav");
-            else if (cl_mk23_sound->integer == 2)
-                S_StartLocalSoundOnce("weapons/mk23fire2.wav");
-            else
-                S_StartLocalSoundOnce("weapons/mk23fire0.wav");
-
-            if (cl_mp5_sound->integer == 1)
-                S_StartLocalSoundOnce("weapons/mp5fire1.wav");
-            else if (cl_mp5_sound->integer == 2)
-                S_StartLocalSoundOnce("weapons/mp5fire2.wav");
-            else
-                S_StartLocalSoundOnce("weapons/mp5fire0.wav");
-
-            if (cl_m4_sound->integer == 1)
-                S_StartLocalSoundOnce("weapons/m4a1fire1.wav");
-            else if (cl_m4_sound->integer == 2)
-                S_StartLocalSoundOnce("weapons/m4a1fire2.wav");
-            else
-                S_StartLocalSoundOnce("weapons/m4a1fire0.wav");
-
-            if (cl_m3_sound->integer == 1)
-                S_StartLocalSoundOnce("weapons/m3fire1.wav");
-            else if (cl_m3_sound->integer == 2)
-                S_StartLocalSoundOnce("weapons/m3fire2.wav");
-            else
-                S_StartLocalSoundOnce("weapons/m3fire0.wav");
-
-            if (cl_hc_sound->integer == 1)
-                S_StartLocalSoundOnce("weapons/hcfire1.wav");
-            else if (cl_hc_sound->integer == 2)
-                S_StartLocalSoundOnce("weapons/hcfire2.wav");
-            else
-                S_StartLocalSoundOnce("weapons/hcfire0.wav");
-
-            if (cl_ssg_sound->integer == 1)
-                S_StartLocalSoundOnce("weapons/ssgfire1.wav");
-            else if (cl_ssg_sound->integer == 2)
-                S_StartLocalSoundOnce("weapons/ssgfire2.wav");
-            else
-                S_StartLocalSoundOnce("weapons/ssgfire0.wav");
-
-            if (cl_sknife_sound->integer == 1)
-                S_StartLocalSoundOnce("weapons/sknife1.wav");
-            else if (cl_sknife_sound->integer == 2)
-                S_StartLocalSoundOnce("weapons/sknife2.wav");
-            else
-                S_StartLocalSoundOnce("weapons/sknife0.wav");
-
-            if (cl_tknife_sound->integer == 1)
-                S_StartLocalSoundOnce("weapons/tknife1.wav");
-            else if (cl_tknife_sound->integer == 2)
-                S_StartLocalSoundOnce("weapons/tknife2.wav");
-            else
-                S_StartLocalSoundOnce("weapons/tknife0.wav");
-        }
-    
-    #endif
 }
 
 static void CL_ParseCenterPrint(void)

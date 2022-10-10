@@ -105,20 +105,6 @@ centity_t   cl_entities[MAX_EDICTS];
 cmdbuf_t    cl_cmdbuf;
 char        cl_cmdbuf_text[MAX_STRING_CHARS];
 
-
-#if USE_AQTION
-cvar_t  *cl_actionsounds;
-cvar_t  *cl_mk23_sound;
-cvar_t  *cl_mp5_sound;
-cvar_t  *cl_m4_sound;
-cvar_t  *cl_m3_sound;
-cvar_t  *cl_hc_sound;
-cvar_t  *cl_ssg_sound;
-cvar_t  *cl_sknife_sound;
-cvar_t  *cl_tknife_sound;
-cvar_t  *cl_grenade_sound;
-#endif
-
 //======================================================================
 
 typedef enum {
