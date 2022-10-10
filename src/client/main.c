@@ -4134,14 +4134,6 @@ static void CL_InitLocal(void)
         cl_ssg_sound->changed = cl_ssg_sound_changed;
         cl_ssg_sound_changed(cl_ssg_sound);
 
-        cl_sknife_sound = Cvar_Get("cl_sknife_sound", "0", 0);
-        cl_sknife_sound->changed = cl_sknife_sound_changed;
-        cl_sknife_sound_changed(cl_sknife_sound);
-
-        cl_sknife_sound = Cvar_Get("cl_sknife_sound", "0", 0);
-        cl_sknife_sound->changed = cl_sknife_sound_changed;
-        cl_sknife_sound_changed(cl_sknife_sound);
-
     #endif
 
     //
