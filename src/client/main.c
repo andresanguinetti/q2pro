@@ -70,6 +70,16 @@ cvar_t  *gender_auto;
 
 cvar_t  *cl_vwep;
 
+#if USE_AQTION
+cvar_t  *cl_actionsounds;
+cvar_t  *cl_mk23_sound;
+cvar_t  *cl_mp5_sound;
+cvar_t  *cl_m4_sound;
+cvar_t  *cl_m3_sound;
+cvar_t  *cl_hc_sound;
+cvar_t  *cl_ssg_sound;
+#endif
+
 //
 // userinfo
 //
