@@ -3842,7 +3842,7 @@ static void cl_mp5_sound_changed(cvar_t *self)
         self->integer = 0;
 }
 
-static void cl_m4a1_sound_changed(cvar_t *self)
+static void cl_m4_sound_changed(cvar_t *self)
 {
     if (!Q_stricmp(self->string, "weapons/m4a1fire0.wav"))
         self->integer = 0;
@@ -4122,11 +4122,39 @@ static void CL_InitLocal(void)
     info_version = Cvar_Get("version", "", CVAR_USERINFO);
 
     #if USE_AQTION
+        cl_actionsounds = Cvar_Get("cl_actionsounds", "0", 0);
 
         cl_mk23_sound = Cvar_Get("cl_mk23_sound", "0", 0);
         cl_mk23_sound->changed = cl_mk23_sound_changed;
         cl_mk23_sound_changed(cl_mk23_sound);
 
+        cl_mp5_sound = Cvar_Get("cl_mp5_sound", "0", 0);
+        cl_mp5_sound->changed = cl_mp5_sound_changed;
+        cl_mp5_sound_changed(cl_mp5_sound);
+
+        cl_m4_sound = Cvar_Get("cl_m4_sound", "0", 0);
+        cl_m4_sound->changed = cl_m4_sound_changed;
+        cl_m4_sound_changed(cl_m4_sound);
+
+        cl_m3_sound = Cvar_Get("cl_m3_sound", "0", 0);
+        cl_m3_sound->changed = cl_m3_sound_changed;
+        cl_m3_sound_changed(cl_m3_sound);
+
+        cl_hc_sound = Cvar_Get("cl_hc_sound", "0", 0);
+        cl_hc_sound->changed = cl_hc_sound_changed;
+        cl_hc_sound_changed(cl_hc_sound);
+
+        cl_ssg_sound = Cvar_Get("cl_ssg_sound", "0", 0);
+        cl_ssg_sound->changed = cl_ssg_sound_changed;
+        cl_ssg_sound_changed(cl_ssg_sound);
+
+        cl_sknife_sound = Cvar_Get("cl_sknife_sound", "0", 0);
+        cl_sknife_sound->changed = cl_sknife_sound_changed;
+        cl_sknife_sound_changed(cl_sknife_sound);
+
+        cl_sknife_sound = Cvar_Get("cl_sknife_sound", "0", 0);
+        cl_sknife_sound->changed = cl_sknife_sound_changed;
+        cl_sknife_sound_changed(cl_sknife_sound);
 
     #endif
 
