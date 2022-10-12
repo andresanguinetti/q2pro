@@ -293,8 +293,21 @@ void CL_MuzzleFlash(void)
 
     switch (mz.weapon) {
     case MZ_BLASTER:
+        #if USE_AQTION
+			if (cl_actionsounds->value) {
+                if (cl_mk23_sound->value == 1)
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/mk23fire1.wav"), volume, ATTN_NORM, 0);
+                else if (cl_mk23_sound->value == 2)
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/mk23fire2.wav"), volume, ATTN_NORM, 0);
+                else
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/mk23fire.wav"), volume, ATTN_NORM, 0);
+            } else {
+                S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/mk23fire.wav"), volume, ATTN_NORM, 0);
+            }
+        #else
+            S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/mk23fire.wav"), volume, ATTN_NORM, 0);
+        #endif
         DL_COLOR(1, 1, 0);
-        S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/blastf1a.wav"), volume, ATTN_NORM, 0);
         break;
     case MZ_BLUEHYPERBLASTER:
         DL_COLOR(0, 0, 1);
@@ -302,21 +315,70 @@ void CL_MuzzleFlash(void)
         break;
     case MZ_HYPERBLASTER:
         DL_COLOR(1, 1, 0);
-        S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/hyprbf1a.wav"), volume, ATTN_NORM, 0);
+        #if USE_AQTION
+			if (cl_actionsounds->value) {
+                if (cl_ssg_sound->value == 1)
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/ssgfire1.wav"), volume, ATTN_NORM, 0);
+                else if (cl_ssg_sound->value == 2)
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/ssgfire2.wav"), volume, ATTN_NORM, 0);
+                else
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/ssgfire.wav"), volume, ATTN_NORM, 0);
+            } else {
+                S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/ssgfire.wav"), volume, ATTN_NORM, 0);
+            }
+        #else
+            S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/ssgfire.wav"), volume, ATTN_NORM, 0);
+        #endif
         break;
     case MZ_MACHINEGUN:
-        DL_COLOR(1, 1, 0);
-        Q_snprintf(soundname, sizeof(soundname), "weapons/machgf%ib.wav", (Q_rand() % 5) + 1);
-        S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound(soundname), volume, ATTN_NORM, 0);
+        #if USE_AQTION
+			if (cl_actionsounds->value) {
+                if (cl_mp5_sound->value == 1)
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/mp5fire1.wav"), volume, ATTN_NORM, 0);
+                else if (cl_mp5_sound->value == 2)
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/mp5fire2.wav"), volume, ATTN_NORM, 0);
+                else
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/mp5fire.wav"), volume, ATTN_NORM, 0);
+            } else {
+                S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/mp5fire.wav"), volume, ATTN_NORM, 0);
+            }
+        #else
+            S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/mp5fire.wav"), volume, ATTN_NORM, 0);
+        #endif
         break;
     case MZ_SHOTGUN:
         DL_COLOR(1, 1, 0);
-        S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/shotgf1b.wav"), volume, ATTN_NORM, 0);
-        S_StartSound(NULL, mz.entity, CHAN_AUTO,   S_RegisterSound("weapons/shotgr1b.wav"), volume, ATTN_NORM, 0.1f);
+        #if USE_AQTION
+			if (cl_actionsounds->value) {
+                if (cl_m3_sound->value == 1)
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/shotgf1b1.wav"), volume, ATTN_NORM, 0);
+                else if (cl_m3_sound->value == 2)
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/shotgf1b2.wav"), volume, ATTN_NORM, 0);
+                else
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/shotgf1b.wav"), volume, ATTN_NORM, 0);
+            } else {
+                S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/shotgf1b.wav"), volume, ATTN_NORM, 0);
+            }
+        #else
+            S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/shotgf1b.wav"), volume, ATTN_NORM, 0);
+        #endif
         break;
     case MZ_SSHOTGUN:
         DL_COLOR(1, 1, 0);
-        S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/sshotf1b.wav"), volume, ATTN_NORM, 0);
+        #if USE_AQTION
+			if (cl_actionsounds->value) {
+                if (cl_hc_sound->value == 1)
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/cannon_fire1.wav"), volume, ATTN_NORM, 0);
+                else if (cl_hc_sound->value == 2)
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/cannon_fire2.wav"), volume, ATTN_NORM, 0);
+                else
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/cannon_fire.wav"), volume, ATTN_NORM, 0);
+            } else {
+                S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/cannon_fire.wav"), volume, ATTN_NORM, 0);
+            }
+        #else
+            S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/cannon_fire.wav"), volume, ATTN_NORM, 0);
+        #endif
         break;
     case MZ_CHAINGUN1:
         DL_RADIUS(200 + (Q_rand() & 31));
@@ -348,8 +410,20 @@ void CL_MuzzleFlash(void)
         break;
     case MZ_ROCKET:
         DL_COLOR(1, 0.5f, 0.2f);
-        S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/rocklf1a.wav"), volume, ATTN_NORM, 0);
-        S_StartSound(NULL, mz.entity, CHAN_AUTO,   S_RegisterSound("weapons/rocklr1b.wav"), volume, ATTN_NORM, 0.1f);
+        #if USE_AQTION
+			if (cl_actionsounds->value) {
+                if (cl_m4_sound->value == 1)
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/m4a1fire1.wav"), volume, ATTN_NORM, 0);
+                else if (cl_m4_sound->value == 2)
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/m4a1fire2.wav"), volume, ATTN_NORM, 0);
+                else
+                    S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/m4a1fire.wav"), volume, ATTN_NORM, 0);
+            } else {
+                S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/m4a1fire.wav"), volume, ATTN_NORM, 0);
+            }
+        #else
+            S_StartSound(NULL, mz.entity, CHAN_WEAPON, S_RegisterSound("weapons/m4a1fire.wav"), volume, ATTN_NORM, 0);
+        #endif
         break;
     case MZ_GRENADE:
         DL_COLOR(1, 0.5f, 0);
